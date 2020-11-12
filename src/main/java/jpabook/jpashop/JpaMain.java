@@ -10,6 +10,8 @@ import javax.persistence.Persistence;
 
 public class JpaMain {
     public static void main(String[] args){
+        
+        //연관관계 매핑 기초 강의 직전 코드
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 
         EntityManager em = emf.createEntityManager();
