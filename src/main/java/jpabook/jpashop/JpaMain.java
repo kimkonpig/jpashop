@@ -55,8 +55,8 @@ public class JpaMain {
             em.persist(member2);
             
             //영속성 컨텍스트 비워내고 초기화
-            /*em.flush();
-            em.clear();*/
+            em.flush();
+            em.clear();
 
             Member2 findMember = em.find(Member2.class, member2.getId());
             /*Team findTeam = findMember.getTeam();
