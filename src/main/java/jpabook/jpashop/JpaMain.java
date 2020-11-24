@@ -47,29 +47,39 @@ public class JpaMain {
             //저장
             Team team = new Team();
             team.setName("TeamA");
+            //team.getMembers().add(member2);
             em.persist(team);
 
             Member2 member2 = new Member2();
             member2.setUsername("member1");
-            member2.setTeam(team);
+            //member2.changeTeam(team); // setTeam()에서 changeTeam()으로 이름 변경
             em.persist(member2);
+
+            //Team.java setTeam에 편의 메소드로 생성하여 주석 처리
+            //team.getMembers().add(member2);
             
             //영속성 컨텍스트 비워내고 초기화
             em.flush();
             em.clear();
 
-            Member2 findMember = em.find(Member2.class, member2.getId());
-            /*Team findTeam = findMember.getTeam();
-            System.out.println("findTeamName = " + findTeam.getName());*/
+            Team findTeam = em.find(Team.class, team.getId());
+            List<Member2> member2s = findTeam.getMembers();
+
+            for(Member2 m : member2s){
+                System.out.println("m = " + m.getUsername());
+            }
+
+
+            /*Member2 findMember = em.find(Member2.class, member2.getId());
+            *//*Team findTeam = findMember.getTeam();
+            System.out.println("findTeamName = " + findTeam.getName());*//*
 
             List<Member2> members = findMember.getTeam().getMembers();
             //member -> team -> member
 
             for(Member2 m : members){
                 System.out.println("m = " + m.getUsername());
-            }
-
-
+            }*/
 
             tx.commit();
         }catch(Exception e){

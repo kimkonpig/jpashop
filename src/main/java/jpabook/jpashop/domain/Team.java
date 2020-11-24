@@ -19,6 +19,11 @@ public class Team {
     public List<Member2> getMembers() {
         return members;
     }
+    
+    public void addMember(Member2 member2){
+        member2.setTeam(this);
+        members.add(member2);
+    }
 
     public void setMembers(List<Member2> members) {
         this.members = members;
