@@ -1,9 +1,6 @@
 package jpabook.jpashop;
 
-import jpabook.jpashop.domain.Member2;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
-import jpabook.jpashop.domain.Team;
+import jpabook.jpashop.domain.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -24,12 +21,21 @@ public class JpaMain {
             /*Order order = new Order(); //주문 객체 생성
             order.addOrderItem(new OrderItem()); //원하는 orderItem 추가*/
 
-            Order order = new Order();
+            /*Order order = new Order();
             em.persist(order);
 
             OrderItem orderItem = new OrderItem();
             orderItem.setOrder(order);
-            em.persist(orderItem);
+            em.persist(orderItem);*/
+
+            Member2 member2 = new Member2();
+            member2.setUsername("member1");
+            em.persist(member2);
+
+            Team team = new Team();;
+            team.setName("team");
+            team.getMembers().add(member2);
+            em.persist(team);
 
             tx.commit();
         }catch(Exception e){

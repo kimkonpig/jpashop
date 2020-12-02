@@ -15,17 +15,17 @@ public class Member2 {
     //@Column(name = "TEAM_ID")
     //private Long teamId;
 
-    @ManyToOne //회원(다) 대 팀(일)
+    /*@ManyToOne //회원(다) 대 팀(일)
     @JoinColumn(name = "TEAM_ID")
-    private Team team;
+    private Team team;*/
 
-    public Team getTeam() {
+    /*public Team getTeam() {
         return team;
     }
 
     public void setTeam(Team team) {
         this.team = team;
-    }
+    }*/
 
     /*public void changeTeam(Team team) {
         this.team = team;

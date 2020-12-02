@@ -13,16 +13,15 @@ public class Team {
 
     private String name;
 
-    @OneToMany(mappedBy = "team") //일대다 매핑에서 어떤거랑 매핑 되어있는지 알려줌
+    /*@OneToMany(mappedBy = "team") //일대다 매핑에서 어떤거랑 매핑 되어있는지 알려줌
+    private List<Member2> members = new ArrayList<>();*/
+
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
     private List<Member2> members = new ArrayList<>();
 
     public List<Member2> getMembers() {
         return members;
-    }
-    
-    public void addMember(Member2 member2){
-        member2.setTeam(this);
-        members.add(member2);
     }
 
     public void setMembers(List<Member2> members) {
