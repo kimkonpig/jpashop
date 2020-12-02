@@ -12,6 +12,15 @@ public class Member2 {
     @Column(name = "USERNAME")
     private String username;
 
+    //일대다 양방향 매핑을 위해 JoinColumn에 속성 두개 추가(읽기전용으로 만들어줌)
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false)
+    private Team team;
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     //@Column(name = "TEAM_ID")
     //private Long teamId;
 
