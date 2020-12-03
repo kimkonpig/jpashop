@@ -1,6 +1,8 @@
 package jpabook.jpashop.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Member2 {
@@ -20,6 +22,9 @@ public class Member2 {
     @OneToOne
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
+
+    @OneToMany(mappedBy = "member2")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
     //@Column(name = "TEAM_ID")
     //private Long teamId;
