@@ -17,16 +17,11 @@ public class Main {
         tx.begin();
 
         try{
-            Member member = new Member();
-            member.setName("member1");
-            em.persist(member);
-
-            Order order = new Order();
-            order.setMember(member);
-            em.persist(order);
+            tx.begin();
 
             tx.commit();
         }catch(Exception e){
+            e.printStackTrace();
             tx.rollback();
         }finally {
             em.close();
