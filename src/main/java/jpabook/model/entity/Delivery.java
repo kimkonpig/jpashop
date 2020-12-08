@@ -1,6 +1,6 @@
 package jpabook.model.entity;
 
-import jpabook.jpashop.domain.DeliveryStatus;
+import jpabook.model.entity.DeliveryStatus;
 
 import javax.persistence.*;
 
