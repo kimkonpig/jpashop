@@ -1,4 +1,4 @@
-package jpabook.jpashop.domain;
+package jpabook.model.entity;
 
 public enum DeliveryStatus {
     READY   //준비
