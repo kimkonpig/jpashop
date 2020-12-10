@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @GeneratedValue //기본 생성 전략 = AUTO, h2 데이터베이스는 SEQUENCE 사용

@@ -17,7 +17,6 @@ public class Main {
         tx.begin();
 
         try{
-            tx.begin();
 
             tx.commit();
         }catch(Exception e){
